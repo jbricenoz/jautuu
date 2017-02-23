@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" thread-count="2" verbose="1" parallel="classes">
+	<test name="IE">
+		<parameter name="browser" value="IE" />
+		<parameter name="environment" value="QA" />
+		<parameter name="browserVersion" value="10.0" />
+		<parameter name="os" value="Windows" />
+		<parameter name="osVersion" value="8" />
+		<classes>
+			<class name="com.mcmcg.gbs.ssc.test.scenario.Login" />
+		</classes>
+	</test>
+	<test name="CHROME">
+		<parameter name="browser" value="CHROME" />
+		<parameter name="environment" value="QA" />
+		<parameter name="browserVersion" value="51.0" />
+		<parameter name="os" value="Windows" />
+		<parameter name="osVersion" value="7" />
+		<classes>
+			<class name="com.mcmcg.gbs.ssc.test.scenario.Login" />
+		</classes>
+	</test>
+</suite>

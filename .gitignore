@@ -1,0 +1,113 @@
+########################
+# ENCORE CAPITAL GROUP #
+# COPYRIGHT 2016       #
+# CR TEAM              #
+########################
+
+# JAVA source #
+###############
+target/*
+logs/*
+.mvn
+.settings
+.classpath
+.project
+.springBeans
+.metadata/*
+Servers/*
+MANIFEST.MF
+
+# Generated source #
+####################
+test-output/*
+target
+Reports/
+Screenshots/
+
+# Compiled source #
+###################
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Others files #
+################
+
+.classpath
+.project
+.settings/org.eclipse.core.resources.prefs
+.settings/org.eclipse.jdt.core.prefs
+.settings/org.eclipse.m2e.core.prefs
+Reports/ExecutionReport.html
+target/classes/META-INF/MANIFEST.MF
+target/classes/META-INF/maven/com.mcmcg.gbs.bluefin/BWPAuto/pom.properties
+target/classes/META-INF/maven/com.mcmcg.gbs.bluefin/BWPAuto/pom.xml
+target/test-classes/com/mcmcg/gbs/bluefin/base/configuration/BaseSetUp$Browser.class
+target/test-classes/com/mcmcg/gbs/bluefin/base/configuration/BaseSetUp$Environment.class
+target/test-classes/com/mcmcg/gbs/bluefin/base/configuration/BaseSetUp.class
+target/test-classes/com/mcmcg/gbs/bluefin/base/configuration/BaseTest.class
+target/test-classes/com/mcmcg/gbs/bluefin/base/configuration/LocalSetUp.class
+target/test-classes/com/mcmcg/gbs/bluefin/base/configuration/RemoteSetUp.class
+target/test-classes/com/mcmcg/gbs/bluefin/pages/factory/LoginPage.class
+target/test-classes/com/mcmcg/gbs/bluefin/service/util/ExtentReportService.class
+target/test-classes/com/mcmcg/gbs/bluefin/service/util/UtilService.class
+target/test-classes/com/mcmcg/gbs/bluefin/service/util/WebDriverService.class
+target/test-classes/com/mcmcg/gbs/bluefin/test/scenarios/Login.class
+test-output/Default suite/Default test.html
+test-output/Default suite/Default test.xml
+test-output/bullet_point.png
+test-output/collapseall.gif
+test-output/emailable-report.html
+test-output/failed.png
+test-output/index.html
+test-output/jquery-1.7.1.min.js
+test-output/junitreports/TEST-com.mcmcg.gbs.bluefin.test.scenarios.Login.xml
+test-output/navigator-bullet.png
+test-output/old/Default suite/Default test.properties
+test-output/old/Default suite/classes.html
+test-output/old/Default suite/groups.html
+test-output/old/Default suite/index.html
+test-output/old/Default suite/main.html
+test-output/old/Default suite/methods-alphabetical.html
+test-output/old/Default suite/methods-not-run.html
+test-output/old/Default suite/methods.html
+test-output/old/Default suite/reporter-output.html
+test-output/old/Default suite/testng.xml.html
+test-output/old/Default suite/toc.html
+test-output/old/index.html
+test-output/passed.png
+test-output/skipped.png
+test-output/testng-reports.css
+test-output/testng-reports.js
+test-output/testng-results.xml
+test-output/testng.css
