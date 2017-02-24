@@ -14,7 +14,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 
 import com.jautuu.driver.factory.WebDriverFactory.Browser;
-import com.jautuu.driver.object.LoginPage;
+import com.jautuu.driver.object.SignInPage;
 import com.jautuu.service.factory.ExtentReportService;
 import com.jautuu.service.factory.WebDriverService;
 import com.relevantcodes.extentreports.ExtentReports;
@@ -27,7 +27,7 @@ public class RemoteTestFactory {
 	protected ExtentReports report;
 	protected ExtentTest test;
 
-	protected LoginPage login;
+	protected SignInPage login;
 
 	@BeforeSuite
 	public void beforeSuite() throws Exception {
@@ -60,7 +60,7 @@ public class RemoteTestFactory {
 		/**
 		 * Driver instances, Maybe we can use a Map<instances>
 		 */
-		login = new LoginPage(driver);
+		login = new SignInPage(driver);
 	}
 
 	@AfterMethod

@@ -33,7 +33,7 @@ public class WebDriverFactory {
 	}
 
 	public static enum Environment {
-		DEV("http://www.google.com"), QA("http://ms-dev.internal.mcmcg.com/"), QA_AUTO("http://localhost:3000");
+		DEV("http://www.google.com"), QA("https://github.com/"), QA_AUTO("http://localhost:3000");
 
 		private final String url;
 
@@ -142,7 +142,7 @@ public class WebDriverFactory {
 		}
 		fileLocation = new File("src/test/resources/").getCanonicalPath().replace("\\", "\\\\").concat("\\\\");
 		fileLocationLinux = new File("src/test/resources/").getCanonicalPath().replace("\\", "/").concat("/");
-		System.out.println(fileLocationLinux.toString());
+		System.out.println(fileLocationLinux);
 		Runnable task = () -> {
 			ProcessBuilder builder = null;
 			String command = null;

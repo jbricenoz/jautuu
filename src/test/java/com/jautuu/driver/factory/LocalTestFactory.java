@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
 import com.jautuu.driver.factory.WebDriverFactory.Browser;
-import com.jautuu.driver.object.LoginPage;
+import com.jautuu.driver.object.SignInPage;
 import com.jautuu.service.factory.ExtentReportService;
 import com.jautuu.service.factory.WebDriverService;
 import com.relevantcodes.extentreports.ExtentReports;
@@ -21,7 +21,7 @@ public class LocalTestFactory {
 	private ExtentReports report;
 	protected ExtentTest test;
 
-	protected LoginPage login;
+	protected SignInPage login;
 
 	@BeforeClass
 	@Parameters({ "url", "browser" })
@@ -30,11 +30,7 @@ public class LocalTestFactory {
 		test = report.startTest(this.getClass().getCanonicalName().toString());
 		driver = WebDriverFactory.createDriver(url, Browser.valueOf(browser));
 		test.log(LogStatus.INFO, "Stating Test instance");
-		/**
-		 * Driver instances, Maybe we can use a Map<instances>
-		 */
-		login = new LoginPage(driver);
-
+		login = new SignInPage(driver);
 	}
 
 	@AfterMethod

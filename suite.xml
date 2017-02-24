@@ -1,13 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Suite1" verbose="1" >
-  <test name="Regression">
-  	<parameter name="browser" value="CHROME" />
-  	<parameter name="appConfig" value="application.properties" />
-  	<parameter name="browserVersion" value="50.0" />
-  	<parameter name="os" value="Windows" />
-  	<parameter name="osVersion" value="8" />
-    <classes>
-      <class name="com.jautuu.test.scenario.LoginTest"/>
-    </classes>
-  </test>
+<suite name="Suite1" verbose="1">
+	<test name="Regression">
+		<parameter name="environment" value="QA" />
+		<parameter name="url" value="QA" />
+		<packages>
+			<package name="com.jautuu.runner.*" />
+		</packages>
+	</test>
 </suite>

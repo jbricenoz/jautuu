@@ -6,22 +6,23 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class SignInPage {
 	
-	public LoginPage(WebDriver driver) {
+	public SignInPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindAll({ @FindBy(id = "username"), @FindBy(css = "usernameField") })
+	@FindAll({ @FindBy(id = "login_field"),  @FindBy(xpath = ".//*[@id='login_field']"), @FindBy(css = "#login_field") })
 	public static WebElement txtUsername;
 
-	@FindBy(id = "password")
+    @FindAll({ @FindBy(id = "password"), @FindBy(xpath = ".//*[@id='password']"), @FindBy(css = "#password") })
 	public static WebElement txtPassword;
 
-	@FindBy(xpath = ".//*[@id='app-content']/div/div/header/nav/div/ul[2]/li[5]/a")
-	public static WebElement test;
-
-	@FindBy(xpath = ".//*[@id='app-content']/div/div/header/nav/div[1]/div[2]/form/div/div/div/input")
-	public static WebElement test2;
+	@FindBy(xpath = ".//*[@id='login']/form/div[4]/input[3]")
+	public static WebElement btnSignIn;
+	
+	@FindBy(xpath = "html/body/div[1]/header/div/a/svg")
+	public static WebElement icnGitHub;
+	
 
 }

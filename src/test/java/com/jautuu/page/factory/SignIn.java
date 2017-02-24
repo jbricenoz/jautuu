@@ -1,23 +1,27 @@
 package com.jautuu.page.factory;
 
-import com.jautuu.driver.object.LoginPage;
+import com.jautuu.driver.object.SignInPage;
 
-public class Login {
+public class SignIn {
 
 	public static boolean setUsername(String username) {
-		LoginPage.txtUsername.sendKeys(username.toString().toLowerCase());
+		SignInPage.txtUsername.sendKeys(username.toString().toLowerCase());
 		return true;
 	}
 
 	public static boolean setPassword(String password) {
-		LoginPage.txtPassword.sendKeys(password.toString().toLowerCase());
+		SignInPage.txtPassword.sendKeys(password.toString().toLowerCase());
 		return true;
 	}
-
-	public static boolean test() {
-		LoginPage.test.click();
-		LoginPage.test2.sendKeys("It's works!");
-		return false;
+	
+	public static boolean clickBtnSignUpPage() {
+		SignInPage.btnSignIn.click();
+		return true;
+	}
+	
+	public static boolean navigateToHomePage(){
+		SignInPage.icnGitHub.click();
+		return true;
 	}
 	
 	/**
@@ -26,8 +30,9 @@ public class Login {
 	 * @return
 	 * @throws Exception
 	 */
-	public boolean setLogin(String username, String password) throws Exception {
-		// Code here
+	public static boolean setSignUp(String username, String email, String password) throws Exception {
+		setUsername(username);
+		setPassword(password);
 		return true;
 	}
 
