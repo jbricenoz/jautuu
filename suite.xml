@@ -7,8 +7,7 @@
   	<parameter name="os" value="Windows" />
   	<parameter name="osVersion" value="8" />
     <classes>
-      <class name="com.jautuu.scenario.Login"/>
-      <class name="com.jautuu.test.suite.Cleanner"/>
+      <class name="com.jautuu.test.scenario.LoginTest"/>
     </classes>
   </test>
 </suite>

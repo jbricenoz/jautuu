@@ -32,7 +32,7 @@ public class UtilService {
 		try {
 			if (isWindows()) {
 				path = file.getCanonicalPath().replace("\\", "\\\\").concat("\\");
-			}else if (isUnix()) {
+			}else {
 				path = file.getCanonicalPath().replace("\\", "/").concat("/");
 			}
 		} catch (IOException e) {
