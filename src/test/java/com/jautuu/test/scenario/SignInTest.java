@@ -4,7 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.jautuu.driver.factory.RemoteTestFactory;
-import com.jautuu.page.factory.SignIn;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class SignInTest  extends RemoteTestFactory {
