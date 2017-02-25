@@ -5,10 +5,20 @@ specializing in QA Engineering process including manual testing and automation t
 I led over projects and implemented effective QA Strategies, 
 QA automation and Software Development processes, to local and globals companies.
 
+- Page Object Model
+- Factory
+- Singlenton
+- BDD Gherkin Cucumber
+- MVN 
+- Jenkins
+- ExtendReport
+- ScreenShoots
+- Logs
+
+
 https://www.linkedin.com/in/jbricenoz/
 
 Install the following plugins in your eclipse IDE before to start
-
 
 Cucumber
 http://cucumber.github.com/cucumber-eclipse/update-site
