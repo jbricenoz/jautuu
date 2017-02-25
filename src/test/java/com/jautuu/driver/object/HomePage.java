@@ -12,6 +12,7 @@ public class HomePage {
 		PageFactory.initElements(driver, this);
 	}
 
+	
 	@FindAll({ @FindBy(xpath = "html/body/div[1]/header/div/div/div/a[1]")})
 	public static WebElement lknSignIn;
 	

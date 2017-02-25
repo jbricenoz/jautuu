@@ -10,7 +10,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "classpath:cucumber/SignIn.feature",
+		features = "features/SignIn.feature",
 		glue = "com.jautuu.definitions",
 		format = {"pretty", "html:target/cucumber"}
 		)

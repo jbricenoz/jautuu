@@ -50,7 +50,7 @@ public class WebDriverFactory {
 		WebDriver driver = null;
 		switch (browser) {
 		case CHROME:
-			ChromeDriverManager.getInstance().setup("2.21");
+			ChromeDriverManager.getInstance().setup();
 			driver = new ChromeDriver();
 			break;
 		case FIREFOX:
@@ -92,7 +92,8 @@ public class WebDriverFactory {
 
 	public static WebDriver createRemoteDriver(URL targetUrl, Browser browser, String browserVersion, String OS,
 			String OSVersion) throws Exception {
-		String BrowserStackConectionUrl = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+		String BrowserStackConectionUrl = "http://" + USERNAME + ":" + AUTOMATE_KEY
+				+ "@hub-cloud.browserstack.com/wd/hub";
 		DesiredCapabilities caps = new DesiredCapabilities();
 		WebDriver driver = null;
 		switch (browser) {
@@ -151,8 +152,8 @@ public class WebDriverFactory {
 					command = "cd " + fileLocation.concat(" && BrowserStackLocal.exe " + AUTOMATE_KEY + " -forcelocal");
 					builder = new ProcessBuilder("cmd.exe", "/c", command);
 				} else {
-					command = "cd " + fileLocationLinux.concat(
-							" && chmod 777 BrowserStackLocal && ./BrowserStackLocal --key " + AUTOMATE_KEY );
+					command = "cd " + fileLocationLinux
+							.concat(" && chmod 777 BrowserStackLocal && ./BrowserStackLocal --key " + AUTOMATE_KEY);
 					builder = new ProcessBuilder("bash", "-c", command);
 				}
 				builder.redirectErrorStream(true);
