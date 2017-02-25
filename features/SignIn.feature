@@ -1,8 +1,5 @@
-#Author: jbriceno.qa@gmail.com
-Feature: SingIn
-    SingUp should not be authenticate
-  	SingUp should not display a error message until the button has been pressed
-    If there is no user in the database the SingUp should not processed
+Feature: SingIn Scenario
+    If there is no user in the database the SingIn should not processed
 
   Scenario: Login with invalid data
     Given User is on Home Page

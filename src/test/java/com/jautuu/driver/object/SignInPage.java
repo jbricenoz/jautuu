@@ -23,6 +23,5 @@ public class SignInPage {
 	
 	@FindBy(xpath = "html/body/div[1]/header/div/a/svg")
 	public static WebElement icnGitHub;
-	
 
 }
