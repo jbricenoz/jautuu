@@ -1,4 +1,4 @@
-package com.jautuu.service.factory;
+package com.mcmcg.gbs.bluefin.service.factory;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -17,7 +17,6 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 public class ExcelService {
 
 	private static XSSFSheet ExcelWSheet;
@@ -27,16 +26,16 @@ public class ExcelService {
 	private static XSSFCell CELL;
 
 	private static XSSFRow ROW;
-
+	
 	public static final String URL = "http://www.store.demoqa.com";
+	 
+    public static final String Username = "testuser_1";
 
-	public static final String Username = "testuser_1";
+    public static final String Password = "Test@123";
 
-	public static final String Password = "Test@123";
+    public static final String Path_TestData = "D://ToolsQA//OnlineStore//src//testData//";
 
-	public static final String Path_TestData = "D://ToolsQA//OnlineStore//src//testData//";
-
-	public static final String File_TestData = "TestData.xlsx";
+    public static final String File_TestData = "TestData.xlsx";
 
 	public static void setExcelFile(String Path, String SheetName) throws Exception {
 		try {
@@ -63,7 +62,7 @@ public class ExcelService {
 	public static void setCellData(String Result, int RowNum, int ColNum) throws Exception {
 		try {
 			ROW = ExcelWSheet.getRow(RowNum);
-			CELL = ROW.getCell(ColNum, Row.RETURN_BLANK_AS_NULL);
+			CELL = ROW.getCell(ColNum, ROW.RETURN_BLANK_AS_NULL);
 			if (CELL == null) {
 				CELL = ROW.createCell(ColNum);
 				CELL.setCellValue(Result);
@@ -79,7 +78,8 @@ public class ExcelService {
 			throw new Exception(e);
 		}
 	}
-
+	
+	
 	public static void excel() throws Exception {
 		{
 			try {

@@ -1,4 +1,4 @@
-package com.jautuu.test.suite;
+package com.mcmcg.gbs.bluefin.test.suits;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 
 import org.testng.annotations.Test;
 
-import com.jautuu.service.factory.UtilService;
+import com.mcmcg.gbs.bluefin.service.factory.UtilService;
 
 public class Cleanner {
 
@@ -17,9 +17,8 @@ public class Cleanner {
 
 	@Test
 	public void clean() throws IOException {
-		pathWindows = new File("/").getCanonicalPath().replace("\\", "\\\\").concat("\\\\");
+		pathWindows = new File("./").getCanonicalPath().replace("\\", "\\\\").concat("\\\\");
 		pathLinux = new File("./").getCanonicalPath().replace("\\", "/").concat("/");
-		System.out.println(pathLinux.toString());
 		Runnable task = () -> {
 			ProcessBuilder builder = null;
 			String command = null;
@@ -28,8 +27,9 @@ public class Cleanner {
 					command = "cd " + pathWindows.concat(" && rmdir screenshots && rmdir reports");
 					builder = new ProcessBuilder("cmd.exe", "/c", command);
 				} else if (UtilService.isUnix()) {
-					command = "cd " + pathLinux.concat(" && rm -R screenshots && rm -R reports");
-					// command = "cd " + pathLinux.concat(" && rm -rvf ExecutionReport.html");
+					// command = "cd " + fileLocationLinux.concat(" && rm -R
+					// screenshots && rm -R reports");
+					command = "cd " + pathLinux.concat(" && rm -rvf ExecutionReport.html");
 					builder = new ProcessBuilder("bash", "-c", command);
 				}
 				builder.redirectErrorStream(true);

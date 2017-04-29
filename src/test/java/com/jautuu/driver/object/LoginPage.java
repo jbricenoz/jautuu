@@ -1,4 +1,4 @@
-package com.jautuu.driver.object;
+package com.mcmcg.gbs.bluefin.pages.object;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,22 +6,31 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+/**
+ * @author jbriceno
+ *
+ */
 public class LoginPage {
-	
+
 	public LoginPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindAll({ @FindBy(id = "username"), @FindBy(css = "usernameField") })
-	public static WebElement txtUsername;
+	@FindAll({ @FindBy(id = "inputEmail"), @FindBy(xpath = ".//*[@id='inputEmail']") })
+	public static WebElement txtEmailAddress;
 
-	@FindBy(id = "password")
+	@FindAll({ @FindBy(id = "inputPassword"), @FindBy(xpath = ".//*[@id='inputPassword']") })
 	public static WebElement txtPassword;
 
-	@FindBy(xpath = ".//*[@id='app-content']/div/div/header/nav/div/ul[2]/li[5]/a")
-	public static WebElement test;
+	@FindAll({ @FindBy(xpath = ".//*[@id='root']/div//section/div//form/div[4]/button"),
+			@FindBy(xpath = ".//*[@id='root']/div/div/div[2]/div/section/div/div[2]/div/div/form/div[4]/button") })
+	public static WebElement btnSignIn;
 
-	@FindBy(xpath = ".//*[@id='app-content']/div/div/header/nav/div[1]/div[2]/form/div/div/div/input")
-	public static WebElement test2;
+	@FindAll({ @FindBy(xpath = ".//*[@id='remember']/label/input") })
+	public static WebElement chkRememberMe;
+	
+	
+	@FindAll({ @FindBy(xpath = ".//*[@id='root']/div/div/div[2]/div/section/div/h1") })
+	public static WebElement lblHomeTitle;
 
 }

@@ -1,12 +1,10 @@
-package com.jautuu.service.factory;
-
-import java.io.IOException;
+package com.mcmcg.gbs.bluefin.service.factory;
 
 import com.relevantcodes.extentreports.ExtentReports;
 
 public class ExtentReportService {
 	
-	public static ExtentReports getInstance() throws IOException {
+	public static ExtentReports getInstance() {
 		ExtentReports extent;
 		String path = UtilService.savePath().concat("ExecutionReport.html");
 		extent = new ExtentReports(path, false);
@@ -15,5 +13,4 @@ public class ExtentReportService {
 		return extent;
 	}
 	
-
 }

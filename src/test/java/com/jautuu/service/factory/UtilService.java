@@ -1,4 +1,4 @@
-package com.jautuu.service.factory;
+package com.mcmcg.gbs.bluefin.service.factory;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -23,10 +23,9 @@ public class UtilService {
 
 	/**
 	 * @return
-	 * @throws IOException 
 	 * @throws Exception
 	 */
-	public static String savePath() throws IOException {
+	public static String savePath() {
 		File file = new File("reports/");
 		String path = null;
 		try {

@@ -1,34 +1,40 @@
-package com.jautuu.page.factory;
+package com.mcmcg.gbs.bluefin.pages.factory;
 
-import com.jautuu.driver.object.LoginPage;
+import org.openqa.selenium.WebDriver;
 
-public class Login {
+import com.mcmcg.gbs.bluefin.pages.object.LoginPage;
 
-	public static boolean setUsername(String username) {
-		LoginPage.txtUsername.sendKeys(username.toString().toLowerCase());
-		return true;
+public class Login extends BaseFactory {
+
+	public Login(WebDriver driver) {
+		super(driver);
 	}
 
-	public static boolean setPassword(String password) {
-		LoginPage.txtPassword.sendKeys(password.toString().toLowerCase());
-		return true;
+	public static boolean setTxtEmailAddress(String email) {
+		return type(LoginPage.txtEmailAddress, email);
 	}
 
-	public static boolean test() {
-		LoginPage.test.click();
-		LoginPage.test2.sendKeys("It's works!");
+	public static boolean setTxtPassword(String password) {
+		if (LoginPage.txtPassword.isDisplayed()) {
+			LoginPage.txtPassword.sendKeys(password.toString());
+			return true;
+		}
 		return false;
 	}
-	
-	/**
-	 * @param username
-	 * @param password
-	 * @return
-	 * @throws Exception
-	 */
-	public boolean setLogin(String username, String password) throws Exception {
-		// Code here
-		return true;
+
+	public static String getPageTitle() {
+		return LoginPage.lblHomeTitle.getText().toString();
+	}
+
+	public static boolean with(String email, String password) throws Exception {
+		if (setTxtEmailAddress(email) && setTxtPassword(password)) {
+			Thread.sleep(2000);
+			LoginPage.chkRememberMe.click();
+			LoginPage.btnSignIn.click();
+			Thread.sleep(2000);
+			return true;
+		}
+		return false;
 	}
 
 }

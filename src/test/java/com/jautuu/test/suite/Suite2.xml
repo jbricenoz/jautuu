@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" thread-count="2" verbose="1" parallel="classes">
+	<test name="IE">
+		<parameter name="browser" value="IE" />
+		<parameter name="environment" value="QA_AUTO" />
+		<classes>
+			<class name="com.mcmcg.gbs.bluefin.test.scenarios.Login"/>
+		</classes>
+	</test>
+	<test name="CHROME">
+		<parameter name="browser" value="CHROME" />
+		<parameter name="environment" value="QA_AUTO" />
+		<classes>
+			<class name="com.mcmcg.gbs.bluefin.test.scenarios.Login2"/>
+		</classes>
+	</test>
+</suite>

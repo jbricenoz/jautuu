@@ -1,4 +1,4 @@
-package com.jautuu.driver.factory;
+package com.mcmcg.gbs.bluefin.driver.factory;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -15,7 +15,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import com.jautuu.service.factory.UtilService;
+import com.mcmcg.gbs.bluefin.service.factory.UtilService;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import io.github.bonigarcia.wdm.InternetExplorerDriverManager;
@@ -185,6 +185,7 @@ public class WebDriverFactory {
 
 	public static void shutdownLocalRemote() throws IOException, InterruptedException {
 		if (proccessBrowserStackLocal != null && proccessBrowserStackLocal.isAlive()) {
+			// proccessBrowserStackLocal.destroyForcibly();
 			System.out.println("Browser Stack tool is shutting down... ");
 			if (UtilService.isWindows()) {
 				Runtime.getRuntime().exec("taskkill /f /im BrowserStackLocal.exe");

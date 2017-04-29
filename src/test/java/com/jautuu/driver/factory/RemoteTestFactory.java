@@ -1,4 +1,4 @@
-package com.jautuu.driver.factory;
+package com.mcmcg.gbs.bluefin.driver.factory;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -13,10 +13,12 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 
-import com.jautuu.driver.factory.WebDriverFactory.Browser;
-import com.jautuu.driver.object.LoginPage;
-import com.jautuu.service.factory.ExtentReportService;
-import com.jautuu.service.factory.WebDriverService;
+import com.mcmcg.gbs.bluefin.driver.factory.WebDriverFactory.Browser;
+import com.mcmcg.gbs.bluefin.pages.object.LoginPage;
+import com.mcmcg.gbs.bluefin.pages.object.SalePage;
+import com.mcmcg.gbs.bluefin.pages.object.SideBarNavPage;
+import com.mcmcg.gbs.bluefin.service.factory.ExtentReportService;
+import com.mcmcg.gbs.bluefin.service.factory.WebDriverService;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -28,6 +30,8 @@ public class RemoteTestFactory {
 	protected ExtentTest test;
 
 	protected LoginPage login;
+	protected SalePage sale;
+	protected SideBarNavPage SideBar;
 
 	@BeforeSuite
 	public void beforeSuite() throws Exception {
@@ -61,6 +65,8 @@ public class RemoteTestFactory {
 		 * Driver instances, Maybe we can use a Map<instances>
 		 */
 		login = new LoginPage(driver);
+		sale = new SalePage(driver);
+		SideBar = new SideBarNavPage(driver);
 	}
 
 	@AfterMethod

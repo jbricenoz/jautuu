@@ -1,4 +1,4 @@
-package com.jautuu.driver.factory;
+package com.mcmcg.gbs.bluefin.driver.factory;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
@@ -7,10 +7,14 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
-import com.jautuu.driver.factory.WebDriverFactory.Browser;
-import com.jautuu.driver.object.LoginPage;
-import com.jautuu.service.factory.ExtentReportService;
-import com.jautuu.service.factory.WebDriverService;
+import com.mcmcg.gbs.bluefin.driver.factory.WebDriverFactory.Browser;
+import com.mcmcg.gbs.bluefin.driver.factory.WebDriverFactory.Environment;
+import com.mcmcg.gbs.bluefin.pages.factory.BaseFactory;
+import com.mcmcg.gbs.bluefin.pages.object.LoginPage;
+import com.mcmcg.gbs.bluefin.pages.object.SalePage;
+import com.mcmcg.gbs.bluefin.pages.object.SideBarNavPage;
+import com.mcmcg.gbs.bluefin.service.factory.ExtentReportService;
+import com.mcmcg.gbs.bluefin.service.factory.WebDriverService;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -21,19 +25,25 @@ public class LocalTestFactory {
 	private ExtentReports report;
 	protected ExtentTest test;
 
+	protected BaseFactory base;
 	protected LoginPage login;
+	protected SalePage sale;
+	protected SideBarNavPage SideBar;
 
 	@BeforeClass
 	@Parameters({ "url", "browser" })
 	public void beforeClass(String url, String browser) throws Exception {
 		report = ExtentReportService.getInstance();
 		test = report.startTest(this.getClass().getCanonicalName().toString());
-		driver = WebDriverFactory.createDriver(url, Browser.valueOf(browser));
+		driver = WebDriverFactory.createDriver(Environment.valueOf(url), Browser.valueOf(browser));
 		test.log(LogStatus.INFO, "Stating Test instance");
 		/**
 		 * Driver instances, Maybe we can use a Map<instances>
 		 */
+		base = new BaseFactory(driver);
 		login = new LoginPage(driver);
+		sale = new SalePage(driver);
+		SideBar = new SideBarNavPage(driver);
 
 	}
 
@@ -52,4 +62,5 @@ public class LocalTestFactory {
 		report.endTest(test);
 		report.flush();
 	}
+
 }
